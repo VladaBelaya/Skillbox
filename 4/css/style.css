@@ -1,0 +1,278 @@
+@font-face {
+  font-family: 'Graphik LCG';
+  src: url('../fonts/GraphikLCG-Medium.woff2') format('woff2'),
+    url('../fonts/GraphikLCG-Medium.woff') format('woff');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Regular.woff2') format('woff2'),
+    url('../fonts/Gilroy-Regular.woff') format('woff');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-ExtraBold.woff2') format('woff2'),
+    url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+  font-display: swap;
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Medium.woff2') format('woff2'),
+    url('../fonts/Gilroy-Medium.woff') format('woff');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Gilroy', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+.table {
+  border-collapse: collapse;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.table td, .table th {
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+
+.caption {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #222020;
+}
+
+.tfoot {
+  display: block;
+  text-align: center;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222020;
+}
+
+
+
+.title {
+  margin: 0 0 30px 0;
+  font-family: 'Graphik LCG', sans-serif;
+  color: #fff;
+
+}
+
+
+
+.link-doc {
+  display: inline-block;
+  padding: 20px;
+  border: 3px solid #2f1ce4;
+  color: #fff;
+  background-color: #2f1ce4;
+}
+
+.link-excerpt {
+  padding: 20px;
+  border: 3px solid #fff;
+  color: #fff;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.link-back {
+  padding-left: 30px;
+  font-size: 18px;
+  color: #222020;
+  background-image: url('../img/return.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 20px;
+}
+
+.main-title {
+  margin-top: 100px;
+  padding-left: 100px;
+  font-size: 48px;
+  color: #222020;
+}
+
+.subtitle {
+  margin: 100px 0 25px 0;
+  padding-left: 180px;
+  font-size: 36px;
+  color: #2f1ce4;
+}
+
+.items {
+  padding-left: 200px;
+  font-size: 18px;
+}
+
+.descr {
+  padding-left: 180px;
+  margin-bottom: 20px;
+}
+
+.img-content {
+  display: inline-block;
+  margin: 50px 0;
+  padding-left: 200px;
+  text-align: center;
+}
+
+.img {
+  max-width: 500px;
+}
+
+.modules {
+  display: block;
+  margin: 50px auto;
+  padding: 20px 30px;
+  border: 3px solid #222020;
+  max-width: 200px;
+  font-size: 20px;
+  color: #222020;
+}
+
+.modules-body {
+  padding-bottom: 625px;
+  background-image: url('../img/line.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom
+}
+
+.wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.modules-inner {
+  padding: 105px 70px;
+}
+
+.logo {
+  display: block;
+  margin: 55px 0;
+  font-family: 'Graphik LCG', sans-serif;
+  font-size: 40px;
+  line-height: 56px;
+  color: #222020;
+}
+
+.modules-header {
+  margin-bottom: 80px;
+  padding-left: 20px;
+  font-size: 48px;
+  color: #222020;
+}
+
+.card-bg {
+  margin-top: 0;
+  margin-bottom: 30px;
+  min-height: 180px;
+  letter-spacing: 10px;
+}
+
+.card-img {
+  width: 480px;
+}
+
+.modules-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.modules-item {
+  margin-right: 50px;
+  margin-bottom: 55px;
+  width: 480px;
+  min-height: 525px;
+  list-style-type: none;
+  box-shadow: 0 0 15px #dedede;
+}
+
+.modules-item2, .modules-item4 {
+  margin-right: 0;
+}
+
+.card-content {
+  padding: 0 25px 30px 55px;
+  height: 310px;
+}
+
+.card-subtitle {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #2f1ce4;
+}
+
+.card-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+  min-height: 150px;
+}
+
+.card-item {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.number {
+  font-size: 48px;
+  line-height: 50px;
+  color: #eaeaea;
+  text-align: right;
+}
+
+.div-btn {
+  text-align: center;
+}
+
+.btn {
+  padding: 25px 75px;
+  border: 3px solid #2f1ce4;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 18px;
+  color: #2f1ce4;
+  background-color: #fff;
+  cursor: pointer;
+}
+
