@@ -112,7 +112,7 @@ b {
   padding-left: 30px;
   background-image: url('../icons/icon1.png');
   background-size: 21px 12px;
-  background-position: left center;
+  background-position: left top;
   background-repeat: no-repeat;
 }
 
@@ -148,10 +148,14 @@ b {
   padding: 10px 10px;
   max-width: 300px;
   border: none;
+}
+
+.header-search-input::placeholder {
   font-size: 14px;
   line-height: 32px;
   color: #bebebe;
 }
+
 
 .header-search-btn {
   padding: 13px 15px;
@@ -221,7 +225,7 @@ b {
 }
 
 .reserv-input {
-  padding: 20px 20px;
+  padding: 27px 20px;
   width: 518px;
   border: none;
   border-radius: 12px;

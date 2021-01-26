@@ -22,7 +22,6 @@
             <a href="tel:+74953225448" class="header-phone">+7 495 322 54 48</a>
           </div>
           <div class="header-right">
-            <span class="header-icon"></span>
             <a href="#" class="link link-header-up">Личный кабинет</a>
           </div>
         </div>
@@ -49,15 +48,15 @@
               </li>
             </ul>
           </nav>
-          <div class="header-search">
+          <form action="https://jsonplaceholder.typicode.com/posts"  method="POST" class="header-search">
             <input
               class="header-search-input"
               type="search"
               name="search"
               placeholder="Поиск"
             />
-            <button class="header-search-btn"></button>
-          </div>
+            <button type="submit" class="header-search-btn"></button>
+          </form>
         </div>
       </div>
     </header>
@@ -103,7 +102,7 @@
               name="numPeople"
             />
             <div class="btn-wrapper">
-              <button class="btn">Найти номер</button>
+              <button type="submit" class="btn">Найти номер</button>
               <span class="reserv-text">
                 <span class="reserv-num">9756</span>
                 предложений доступно
@@ -263,11 +262,7 @@
           <h2 class="subtitle">Размещение</h2>
           <ul class="accom-list">
             <li class="accom-item">
-              <!-- <img
-                src="img/img6.jpg"
-                alt="отель Lagoona española"
-                class="accom-img"
-              /> -->
+              
               <div class="accom-img accom-img1"></div>
               <div class="accom-content">
                 <div class="accom-rait">
@@ -294,7 +289,7 @@
               </div>
             </li>
             <li class="accom-item">
-              <!-- <img src="img/img7.jpg" alt="" class="accom-img" /> -->
+              
               <div class="accom-img accom-img2"></div>
               <div class="accom-content">
                 <div class="accom-rait">
