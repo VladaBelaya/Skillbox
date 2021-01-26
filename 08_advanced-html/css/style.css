@@ -596,7 +596,7 @@ b {
   max-width: 240px;
 }
 
-.contacts-address {
+.address {
   font-size: 16px;
   line-height: 24px;
   color: #333;
@@ -678,4 +678,84 @@ b {
 .btn-big {
   padding: 26px 125px;
   margin-right: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  margin-bottom: 50px;
+  padding: 45px 50px;
+  border-radius: 12px;
+  background-color: #333;
+  background-image: url('../img/sun.png');
+  background-repeat: no-repeat;
+  background-position: 735px bottom;
+}
+
+.footer-descrs {
+  max-width: 345px;
+}
+
+.footer-descr {
+  margin-bottom: 45px;
+  font-size: 16px;
+  line-height: 32px;
+  color: #fff;
+}
+
+.footer-info {
+  max-width: 365px;
+  margin-right: 160px;
+}
+
+.address-white {
+  line-height: 32px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.footer-link {
+  display: block;
+  margin-right: 0;
+}
+
+.footer-link:last-child {
+  margin-bottom: 30px;
+}
+
+.link-email {
+  display: block;
+  line-height: 24px;
+
+}
+
+.footer-icon {
+  height: 25px;
+  width: 25px;
+  margin-bottom: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.footer-icon1 {
+  margin-top: 3px;
+  background-image: url('../icons/tripadvisor.png');
+}
+
+.footer-icon2 {
+  background-image: url('../icons/twitter.png');
+}
+
+.footer-icon3 {
+  background-image: url('../icons/facebook.png');
+}
+
+.footer-icon4 {
+  background-image: url('../icons/social.png');
+}
+
+.footer-icon5 {
+  background-image: url('../icons/google.png');
 }
