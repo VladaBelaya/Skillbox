@@ -162,7 +162,8 @@ h1, h2, h3, p {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -185,18 +186,18 @@ h1, h2, h3, p {
 }
 
 .header__menu {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
   z-index: 3;
-  display: block;
   padding: 130px 70px;
   max-width: 420px;
   min-height: 768px;
   background-color: var(--color-descr);
-  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.1);
   transform: translateX(-100%);
   transition: transform .3s ease-in-out;
 }
@@ -353,7 +354,6 @@ h1, h2, h3, p {
   width: 15px;
   height: 15px;
   background-color: var(--color-descr);
-  outline: none;
 }
 
 
@@ -542,7 +542,6 @@ h1, h2, h3, p {
 }
 
 .work__content_active {
-  display: block;
   display: flex;
 }
 
@@ -659,9 +658,11 @@ h1, h2, h3, p {
   transition: color .2s ease-in-out;
 }
 
-.questions__subheader:hover {
+.questions__subheader:hover,
+.questions__subheader:focus {
   color: var(--color-btn);
 }
+
 
 .span {
   color: var(--color-border-bg);
@@ -704,7 +705,6 @@ h1, h2, h3, p {
 .ui-accordion-header-active .questions__plus::after {
   transform: rotate(180deg);
   top: 25px;
-
 }
 
 .questions__plus::before {
@@ -740,7 +740,6 @@ h1, h2, h3, p {
   flex-direction: column;
   flex: 0 0 30%;
   margin-right: 67px;
-
 }
 
 .footer__logo {
@@ -811,7 +810,26 @@ h1, h2, h3, p {
   border: none;
   color: var(--color-descr);
   background-color: #414141;
-  outline: none;
+}
+
+.form__input::-webkit-input-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
+}
+
+.form__input::-moz-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
+}
+
+.form__input:-ms-input-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
+}
+
+.form__input::-ms-input-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
 }
 
 .form__input::placeholder {
@@ -829,7 +847,26 @@ h1, h2, h3, p {
   color: var(--color-descr);
   background-color: #414141;
   resize: none;
-  outline: none;
+}
+
+.form__textarea::-webkit-input-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
+}
+
+.form__textarea::-moz-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
+}
+
+.form__textarea:-ms-input-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
+}
+
+.form__textarea::-ms-input-placeholder {
+  font-size: 16px;
+  color: var(--color-border-bg);
 }
 
 .form__textarea::placeholder {
@@ -840,7 +877,7 @@ h1, h2, h3, p {
 .form__label {
   position: relative;
   display: inline-block;
-  padding-left: 18px;
+  padding-left: 22px;
   font-size: 16px;
   line-height: 21px;
   color: var(--color-border-bg);
@@ -849,34 +886,46 @@ h1, h2, h3, p {
 
 .form__check {
   display: none;
-
+}
+.form__label::before,
+.form__label::after {
+  position: absolute;
+  display: inline-block;
 }
 
-.form__check + span {
-  position: absolute;
-  top: 3px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
+.form__label::before {
+  content: '';
+  left: 4px;
+  top: 2px;
+  height: 12px;
+  width: 12px;
   border: 1px solid #fff;
 }
 
-.form__check + span::before {
-  content: '\2713';
-  position: absolute;
-  top: -4px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  color: rgb(0, 216, 0);
-  transition: opacity .2s ease-in-out;
+.form__label::after {
+    content: '';
+    left: 7px;
+    top: 3px;
+    height: 6px;
+    width: 5px;
+    border-left: 2px solid #97EE3F;
+    border-bottom: 2px solid #97EE3F;
+    transform: rotate(-45deg);
 }
 
-.form__check:checked + span::before {
+.form__check + .form__label::after {
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+.form__check:checked + .form__label::after {
   opacity: 1;
+}
+
+
+
+.form__btn {
+  display: flex;
+  align-items: center;
 }
 
 .form__btn {
@@ -932,7 +981,6 @@ h1, h2, h3, p {
   .about-us__card {
     padding: 35px 20px;
     min-height: 257px;
-
   }
 
   .about-us__card-content {
@@ -991,6 +1039,8 @@ h1, h2, h3, p {
     height: 23px;
     margin-bottom: 1px;
   }
+
+
 
   .header__burger-line {
     width: 30px;
@@ -1660,6 +1710,22 @@ h1, h2, h3, p {
     margin-left: 0;
   }
 
+  .form__input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+
+  .form__input::-moz-placeholder {
+    font-size: 14px;
+  }
+
+  .form__input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+
+  .form__input::-ms-input-placeholder {
+    font-size: 14px;
+  }
+
   .form__input::placeholder {
     font-size: 14px;
   }
@@ -1669,6 +1735,18 @@ h1, h2, h3, p {
     padding-top: 22px;
     padding-left: 18px;
     margin-bottom: 26px;
+  }
+  .form__textarea::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .form__textarea::-moz-placeholder {
+    font-size: 14px;
+  }
+  .form__textarea:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .form__textarea::-ms-input-placeholder {
+    font-size: 14px;
   }
   .form__textarea::placeholder {
     font-size: 14px;
@@ -1734,10 +1812,14 @@ h1, h2, h3, p {
     padding: 6px 0 4px;
   }
 
+  .header__container {
+    position: relative;
+  }
+
   .header__burger {
     order: 2;
     margin-bottom: 0;
-    width: 26px;
+    width: 32px;
   }
 
   .header__burger-line {
@@ -1749,14 +1831,17 @@ h1, h2, h3, p {
   }
 
   .header__menu {
+    position: absolute;
     max-width: 200px;
-    min-height: 50%;
-    max-height: 55%;
     padding: 50px 30px;
   }
 
   .header__menu_active {
-    transform: translateX(64%);
+   top: -5px;
+   bottom: 0;
+   left: 90px;
+   right: 0;
+   min-height: 320px;
   }
 
   .header__burger_active {
@@ -1971,8 +2056,7 @@ h1, h2, h3, p {
 
 
   .btn_work {
-    margin: 0;
-    margin-right: 10px;
+    margin: 0 10px 0 0;
     padding: 12px 44px 14px 45px;
     line-height: 15px;
   }
@@ -2060,11 +2144,19 @@ h1, h2, h3, p {
   }
 
   /* FOOTER */
+  .footer__container {
+      max-width: 300px;
+
+  }
 
   .btn_footer {
     margin-bottom: 17px;
     padding-top: 14px;
     padding-bottom: 14px;
   }
+
+  .form__btn {
+    display: block;
+}
 
 }
