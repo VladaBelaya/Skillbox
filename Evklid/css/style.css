@@ -928,9 +928,7 @@ h1, h2, h3, p {
   align-items: center;
 }
 
-.form__btn {
-  margin-left: 2px;
-}
+
 
 .footer__descr {
   flex: 0 0 30%;
@@ -1757,9 +1755,10 @@ h1, h2, h3, p {
     padding-top: 14px;
     padding-bottom: 14px;
   }
+  
 
   .form__label {
-    padding-left: 22px;
+    padding-left: 20px;
   }
 
   .form__check + span {
