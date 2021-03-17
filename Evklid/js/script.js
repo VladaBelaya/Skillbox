@@ -19,12 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
-
+    speed: 800,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
+
+    autoplay: {
+      delay: 5000,
+    }
+
+
 
 
   });

@@ -904,13 +904,13 @@ h1, h2, h3, p {
 
 .form__label::after {
     content: '';
-    left: 7px;
-    top: 3px;
-    height: 6px;
-    width: 5px;
-    border-left: 2px solid #97EE3F;
-    border-bottom: 2px solid #97EE3F;
-    transform: rotate(-45deg);
+    left: 5px;
+    top: 2px;
+    height: 12px;
+    width: 12px;
+    background-image: url('../icons/footer_icon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .form__check + .form__label::after {
