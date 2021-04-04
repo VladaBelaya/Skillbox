@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15 модуль</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="choices.min.css" />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/animations/scale.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="checkbox">
+        <div class="title">Категории:</div>
+        <ul class="list">
+          <li class="item">
+            <input class="check" type="checkbox" id="dinosaurs" />
+            <label class="label_check" for="dinosaurs">Динозавры</label>
+          </li>
+          <li class="item">
+            <input class="check" type="checkbox" id="bears" />
+            <label class="label_check" for="bears">Медведи</label>
+          </li>
+          <li class="item">
+            <input class="check" type="checkbox" id="roe" />
+            <label class="label_check" for="roe">Косули</label>
+          </li>
+          <li class="item">
+            <input class="check" type="checkbox" id="foxes" />
+            <label class="label_check" for="foxes">Лисы</label>
+          </li>
+          <li class="item">
+            <input class="check" type="checkbox" id="wolves" />
+            <label class="label_check" for="wolves">Волки</label>
+          </li>
+          <li class="item">
+            <input class="check" type="checkbox" id="deer" />
+            <label class="label_check" for="deer">Олени и лоси</label>
+          </li>
+        </ul>
+      </div>
+
+      <select class="select" name="select">
+        <option value="">Материал</option>
+        <option value="">Древесина</option>
+        <option value="">Металл</option>
+        <option value="">Камень</option>
+        <option value="">Пластик</option>
+        <option value="">Композитный</option>
+        <option value="">Гипс</option>
+      </select>
+
+      <div id="map" style="width: 460px; height: 460px"></div>
+
+      <div class="customScroll" data-simplebar>
+        Сложно сказать, почему многие известные личности представлены в
+        исключительно положительном свете. Лишь активно развивающиеся страны
+        третьего мира будут объективно рассмотрены соответствующими инстанциями.
+        Мы вынуждены отталкиваться от того, что высокотехнологичная концепция
+        общественного уклада представляет собой интересный эксперимент проверки
+        глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая
+        примерно следующее: непосредственные участники технического прогресса
+        освещают чрезвычайно интересные особенности картины в целом, однако
+        конкретные выводы, разумеется, обнародованы. Значимость этих проблем
+        настолько очевидна, что социально-экономическое развитие, а также свежий
+        взгляд на привычные вещи - безусловно открывает новые горизонты для
+        первоочередных требований.
+      </div>
+
+      <form action="" class="form">
+        <label for="" class="label">
+          <input
+            type="text"
+            name="Имя"
+            data-validate-field="name"
+            placeholder="Имя*"
+          />
+        </label>
+        <label for="" class="label">
+          <input
+            type="tel"
+            name="tel"
+            data-validate-field="tel"
+            data-validate-rules="phone"
+            placeholder="Телефон*"
+          />
+        </label>
+        <label for="" class="label">
+          <input
+            type="email"
+            name="email"
+            data-validate-field="mail"
+            placeholder="E-mail*"
+          />
+        </label>
+
+        <button>Заказать</button>
+      </form>
+
+      <div class="tooltip">
+        <p class="tooltip__text">
+          Следует отметить, что социально-экономическое развитие способствует
+          повышению качества переосмысления внешнеэкономических политик.
+          <button id="myButton"></button>
+        </p>
+      </div>
+    </div>
+
+    <script src="choices.min.js"></script>
+    <script src="inputmask.min.js"></script>
+    <script src="just-validate.min.js"></script>
+
+    <script>
+      const element = document.querySelector("select");
+      const choices = new Choices(element, {
+        searchEnabled: false,
+        shouldSort: false,
+      });
+    </script>
+    <script type="text/javascript">
+      // Функция ymaps.ready() будет вызвана, когда
+      // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+      ymaps.ready(function () {
+        var myMap = new ymaps.Map("map", {
+            center: [48.872185073737896, 2.3542149999999555],
+            zoom: 15,
+            controls: [],
+          }),
+          // Создаём макет содержимого.
+          MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+          ),
+          myPlacemark = new ymaps.Placemark(
+            myMap.getCenter([48.872107222601066, 2.3460610845946923]),
+            {
+              hintContent: "",
+              balloonContent: "Это красивая метка",
+            },
+            {
+              // Опции.
+              // Необходимо указать данный тип макета.
+              iconLayout: "default#image",
+              // Своё изображение иконки метки.
+              iconImageHref: "metka.svg",
+              // Размеры метки.
+              iconImageSize: [30, 42],
+              // Смещение левого верхнего угла иконки относительно
+              // её "ножки" (точки привязки).
+              iconImageOffset: [-5, -38],
+            }
+          );
+
+        myMap.geoObjects.add(myPlacemark);
+      });
+    </script>
+
+    <script>
+      var selector = document.querySelector("input[type='tel']");
+
+      var im = new Inputmask("+7 (999) 999-99-99");
+      im.mask(selector);
+
+      new JustValidate(".form", {
+        rules: {
+          name: {
+            required: true,
+            minLength: 2,
+            maxLength: 10,
+          },
+          tel: {
+            required: true,
+            function: (name, value) => {
+              const phone = selector.inputmask.unmaskedvalue();
+              return Number(phone) && phone.length === 10;
+            },
+          },
+          mail: {
+            required: true,
+            email: true,
+          },
+        },
+        messages: {
+          name: {
+            minLength: "Длина имени не менее 2-х символов",
+            required: "Как вас зовут?",
+          },
+          tel: {
+            required: "Укажите ваш телефон",
+            function: "Длина телефона должна быть 10 цифр",
+          },
+          mail: {
+            required: "Укажите ваш e-mail",
+            email: "e-mail должен содержать латинские буквы и @",
+          },
+        },
+      });
+    </script>
+
+    <script>
+      tippy("#myButton", {
+        content: "Глава 2, страница 176",
+        placement: "top",
+        arrow: true,
+        duration: 300,
+        theme: "material",
+      });
+    </script>
+  </body>
+</html>
