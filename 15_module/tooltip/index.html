@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip {
+            position: relative;
+        }
+        .marker {
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+            
+        }
+
+        .marker:hover + .popap,
+        .marker:focus + .popap {
+           opacity: 1;
+        }
+
+        .popap {
+            opacity: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            max-width: 250px;
+            margin-top: 10px;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 10px;
+            transition: opacity .2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="tooltip">
+        <div tabindex="0" class="marker"></div>
+        <div class="popap">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere natus exercitationem maiores deserunt rerum laborum, reiciendis veritatis iste officia labore quisquam esse, consequatur, nihil ex? Laborum recusandae qui dignissimos vitae!
+        </div>
+    </div>
+</body>
+</html>

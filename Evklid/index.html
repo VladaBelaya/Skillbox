@@ -6,13 +6,11 @@
     <title>Евклид - проектные системы</title>
     <link rel="stylesheet" href="css/normalize.css" />
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <link
@@ -20,15 +18,20 @@
       href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
     <link rel="stylesheet" href="/resources/demos/style.css" />
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+    <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script defer src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="container header__container">
-        <div class="header__burger">
+        <div
+          aria-label="Открыть меню"
+          role="button"
+          tabindex="0"
+          class="header__burger"
+        >
           <div class="header__burger-line"></div>
           <div class="header__burger-line"></div>
           <div class="header__burger-line"></div>
@@ -53,7 +56,7 @@
           </ul>
         </div>
         <div>
-          <a href="#" class="link">
+          <a tabindex="0" href="#" class="link">
             <img
               class="link__img"
               src="img/logo.svg"
@@ -80,7 +83,7 @@
                 <a href="#" class="header__link">Контакты</a>
               </li>
             </ul>
-            <button class="header__btn-search" type="submit">
+            <button aria-label="Найти" class="header__btn-search" type="submit">
               <svg
                 class="header__icon"
                 width="25.17"
@@ -119,7 +122,9 @@
               Есть над чем задуматься: базовые сценарии поведения пользователей
               и по сей день остаются уделом проектантов
             </p>
-            <button class="btn">Заказать расчёт</button>
+            <button aria-label="Заказать расчет" class="btn">
+              Заказать расчёт
+            </button>
           </div>
           <div class="swiper-container swiper-no-swiping">
             <!-- Additional required wrapper -->
@@ -161,7 +166,7 @@
                   планирование способствует подготовке и реализации новых
                   принципов.
                 </p>
-                <a href="#" class="btn btn_about-us">Подробнее</a>
+                <a role="button" href="#" class="btn btn_about-us">Подробнее</a>
               </div>
             </div>
             <div class="about-us__cards">
@@ -198,18 +203,36 @@
           <h2 class="subtitle work__subtitle">Как мы работаем</h2>
           <ul class="work__list">
             <li class="work__item">
-              <button class="work__tab work__tab_active" data-path="one">
+              <button
+                aria-label="Первый шаг"
+                class="work__tab work__tab_active"
+                data-path="one"
+              >
                 1 шаг
               </button>
             </li>
             <li class="work__item">
-              <button class="work__tab" data-path="two">2 шаг</button>
+              <button aria-label="Второй шаг" class="work__tab" data-path="two">
+                2 шаг
+              </button>
             </li>
             <li class="work__item">
-              <button class="work__tab" data-path="three">3 шаг</button>
+              <button
+                aria-label="Третий шаг"
+                class="work__tab"
+                data-path="three"
+              >
+                3 шаг
+              </button>
             </li>
             <li class="work__item">
-              <button class="work__tab" data-path="four">4 шаг</button>
+              <button
+                aria-label="Четвертый шаг"
+                class="work__tab"
+                data-path="four"
+              >
+                4 шаг
+              </button>
             </li>
           </ul>
           <div class="work__content work__content_active" data-target="one">
@@ -231,8 +254,12 @@
                 к ответу.
               </p>
               <div class="work__btns">
-                <a href="#" class="btn btn_work">Подробнее</a>
-                <a href="#" class="btn btn_work-border" target="_blank"
+                <a role="button" href="#" class="btn btn_work">Подробнее</a>
+                <a
+                  role="button"
+                  href="#"
+                  class="btn btn_work-border"
+                  target="_blank"
                   >Договор</a
                 >
               </div>
@@ -320,7 +347,7 @@
           <h2 class="subtitle questions__subtitle">Часто задаваемые вопросы</h2>
           <ul class="questions__list" id="accordion">
             <li class="questions__item">
-              <h3 class="subheader questions__subheader">
+              <h3 tabindex="18" class="subheader questions__subheader">
                 <span class="questions__subheader1"
                   >Из чего формируется конечная стоимость проекта?</span
                 >
@@ -350,7 +377,10 @@
               </p>
             </li>
             <li class="questions__item">
-              <h3 class="subheader questions__subheader ui-accordion-header2">
+              <h3
+                tabindex="19"
+                class="subheader questions__subheader ui-accordion-header2"
+              >
                 <span class="questions__subheader2">
                   У меня есть свой проект. Сможем ли мы его доработать
                   <span class="span">/</span>
@@ -382,7 +412,10 @@
               </p>
             </li>
             <li class="questions__item">
-              <h3 class="subheader questions__subheader ui-accordion-header3">
+              <h3
+                tabindex="20"
+                class="subheader questions__subheader ui-accordion-header3"
+              >
                 <span class="questions__subheader3">
                   Я выбираю между разными компаниями. В чём ваше отличие?
                 </span>
@@ -412,7 +445,10 @@
               </p>
             </li>
             <li class="questions__item">
-              <h3 class="subheader questions__subheader ui-accordion-header4">
+              <h3
+                tabindex="21"
+                class="subheader questions__subheader ui-accordion-header4"
+              >
                 <span class="questions__subheader4">
                   Могу ли я делегировать вам работу
                   <span class="span">/</span> согласование с подрядчиком
@@ -445,7 +481,10 @@
               </p>
             </li>
             <li class="questions__item">
-              <h3 class="subheader questions__subheader ui-accordion-header5">
+              <h3
+                tabindex="22"
+                class="subheader questions__subheader ui-accordion-header5"
+              >
                 <span class="questions__subheader5">
                   Могу ли я вернуть деньги на каком-либо из этапов работ?
                 </span>
@@ -521,9 +560,21 @@
             </ul>
           </nav>
           <div class="footer__icons-links">
-            <a href="#" class="footer__icon-link footer__icon-link1"></a>
-            <a href="#" class="footer__icon-link footer__icon-link2"></a>
-            <a href="#" class="footer__icon-link footer__icon-link3"></a>
+            <a
+              aria-label="facebook"
+              href="#"
+              class="footer__icon-link footer__icon-link1"
+            ></a>
+            <a
+              aria-label="vk"
+              href="#"
+              class="footer__icon-link footer__icon-link2"
+            ></a>
+            <a
+              aria-label="instagram"
+              href="#"
+              class="footer__icon-link footer__icon-link3"
+            ></a>
           </div>
         </div>
         <form
@@ -562,7 +613,7 @@
             <button type="submit" class="btn btn_footer">
               Отправить данные
             </button>
-            <label for="check" class="form__label">
+            <div class="checkbox">
               <input
                 class="form__check"
                 type="checkbox"
@@ -570,9 +621,10 @@
                 id="check"
                 checked
               />
-              Согласен на обработку данных
-              <span class="form__span"></span>
-            </label>
+              <label tabindex="0" for="check" class="form__label"
+                >Согласен на обработку данных</label
+              >
+            </div>
           </div>
         </form>
         <p class="footer__descr">
@@ -585,7 +637,5 @@
         </p>
       </div>
     </footer>
-
-    <script src="js/script.js"></script>
   </body>
 </html>
