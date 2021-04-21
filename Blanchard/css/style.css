@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Open-sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/OpenSans-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/OpenSans-Regular.woff') format('woff'); /* Modern Browsers */
+
+
+}
+
+@font-face {
+    font-family: 'Open-sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+         url('../fonts/OpenSans-SemiBold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/OpenSans-SemiBold.woff') format('woff'); /* Modern Browsers */
+}
+
+@font-face {
+    font-family: 'Open-sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/OpenSans-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/OpenSans-Bold.woff') format('woff'); /* Modern Browsers */
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open-sans', sans-serif;
+}
+
+img {
+  box-sizing: content-box;
+  width: 100%;
+}
+
+:root {
+  --color-purp: #9D5CD0;
+  --color-lightPurp: #C283F3;
+  --color-text: #fff;
+  --color-darkText: #333;
+}
